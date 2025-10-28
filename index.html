@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dərs Videoları Platforması</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="container">
+  <header class="topbar">
+    <!-- 🔹 Logo üçün: eyni qovluğa logo.png at, və ya src-ni uyğun adla dəyiş -->
+    <img src="logo.png" alt="Logo" class="logo" onerror="this.style.display='none'"/>
     <h1>Dərs Videoları Platforması</h1>
+  </header>
 
-    <div id="groupSelect">
+  <main class="container">
+    <section id="groupSection" class="card">
       <h2>Qrup seçin</h2>
       <select id="group">
         <option value="">-- Qrup seçin --</option>
@@ -18,24 +22,37 @@
         <option value="S2">S2</option>
         <option value="O1">O1</option>
         <option value="15S1">15S1</option>
+        <!-- İstədiyin qədər əlavə et: S3, A1, B2, ... -->
       </select>
-    </div>
+      <p class="hint">
+        Qeydə: Hər qrup üçün Google Sheet daxilində eyni adda <strong>verəq/tab</strong> olmalıdır (məs: <code>S1</code>, <code>S2</code>).
+      </p>
+    </section>
 
-    <div id="subjectSelect" class="hidden">
+    <section id="subjectSection" class="card hidden">
       <h2>Fənn seçin</h2>
-      <button class="subject-btn" data-subject="informatika">İnformatika</button>
-      <button class="subject-btn" data-subject="mentiq">Məntiq</button>
-      <button class="subject-btn" data-subject="ingilis">İngilis dili</button>
-    </div>
+      <div class="btn-row">
+        <button class="subject-btn" data-subject="informatika">İnformatika</button>
+        <button class="subject-btn" data-subject="mentiq">Məntiq</button>
+        <button class="subject-btn" data-subject="ingilis">İngilis dili</button>
+      </div>
+    </section>
 
-    <div id="videos" class="hidden">
-      <h2 id="videoTitle"></h2>
+    <section id="videos" class="card hidden">
+      <div class="videos-header">
+        <h2 id="videoTitle"></h2>
+        <button id="backBtn" class="secondary">← Geri</button>
+      </div>
+
+      <div id="loading" class="loading hidden">Yüklənir…</div>
       <div id="videoList"></div>
-      <button id="backBtn">← Geri</button>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <script src="videos.js"></script>
+  <footer>
+    © 2025 Dərs Platforması • GitHub Pages + Google Sheets inteqrasiyası
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
