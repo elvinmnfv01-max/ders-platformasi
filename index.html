@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dərs Videoları Platforması</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Dərs Videoları Platforması</h1>
+
+    <div id="groupSelect">
+      <h2>Qrup seçin</h2>
+      <select id="group">
+        <option value="">-- Qrup seçin --</option>
+        <option value="S1">S1</option>
+        <option value="S2">S2</option>
+        <option value="O1">O1</option>
+        <option value="15S1">15S1</option>
+      </select>
+    </div>
+
+    <div id="subjectSelect" class="hidden">
+      <h2>Fənn seçin</h2>
+      <button class="subject-btn" data-subject="informatika">İnformatika</button>
+      <button class="subject-btn" data-subject="mentiq">Məntiq</button>
+      <button class="subject-btn" data-subject="ingilis">İngilis dili</button>
+    </div>
+
+    <div id="videos" class="hidden">
+      <h2 id="videoTitle"></h2>
+      <div id="videoList"></div>
+      <button id="backBtn">← Geri</button>
+    </div>
+  </div>
+
+  <script src="videos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
